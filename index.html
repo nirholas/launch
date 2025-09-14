@@ -1,0 +1,330 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Coin Launch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+        .landing-container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .form-header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #1a1a1a;
+        }
+        .form-header p {
+            font-size: 1.2em;
+            color: #666666;
+            margin-top: 10px;
+        }
+        .form-container {
+            display: flex;
+            gap: 40px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .form-section {
+            flex: 2;
+        }
+        .preview-section {
+            flex: 1;
+            background-color: #f9fafb;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 500;
+            color: #4b5563;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            background-color: #f9fafb;
+            border: 1px solid #d1d5db;
+            color: #333333;
+            border-radius: 12px;
+            font-size: 1em;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+        .upload-area {
+            border: 2px dashed #d1d5db;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #f9fafb;
+        }
+        .upload-area p {
+            margin: 0;
+            color: #9ca3af;
+            font-size: 1em;
+        }
+        .upload-area button {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            color: #4b5563;
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        .upload-area button:hover {
+            background-color: #f3f4f6;
+        }
+        .file-specs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+        .file-specs div {
+            flex: 1;
+            padding: 10px;
+        }
+        .file-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+        button[type="submit"] {
+            background-color: #6366f1;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #4f46e5;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #6b7280;
+            margin-top: 15px;
+        }
+        .social-links input {
+            margin-top: 10px;
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #6b7280;
+        }
+        .emoji {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        footer {
+            background-color: #f9fafb;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 1px solid #e5e7eb;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            color: #6b7280;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .form-section, .preview-section {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <div class="form-header">
+            <h1>Launch Your Coin</h1>
+            <p>Share your idea, and we'll handle the rest.</p>
+        </div>
+        <div class="form-container">
+            <div class="form-section">
+                <h2>Create new coin</h2>
+                <p class="note">Provide your details – our experts will review and contact you.</p>
+                
+                <form action="https://formspree.io/f/your-form-id" method="post" enctype="multipart/form-data"> <!-- Replace with actual endpoint -->
+                    <label for="your-name">Your Name</label>
+                    <input type="text" id="your-name" name="your-name" placeholder="Enter your name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    
+                    <label for="coin-name">Coin name</label>
+                    <input type="text" id="coin-name" name="coin-name" placeholder="Name your coin" required>
+                    
+                    <label for="ticker">Ticker</label>
+                    <input type="text" id="ticker" name="ticker" placeholder="Add a coin ticker (e.g. DOGE)" required>
+                    
+                    <label for="description">Description (Optional)</label>
+                    <textarea id="description" name="description" placeholder="Write a short description" rows="4"></textarea>
+                    
+                    <div class="social-links">
+                        <label>Add social links (Optional)</label>
+                        <input type="text" name="twitter" placeholder="Twitter link">
+                        <input type="text" name="telegram" placeholder="Telegram link">
+                        <input type="text" name="website" placeholder="Website link">
+                    </div>
+                    
+                    <div class="upload-area">
+                        <p>Select video or image to upload<br>or drag and drop it here</p>
+                        <input type="file" id="file-upload" name="file-upload" accept="image/jpeg, image/gif, image/png, video/mp4" style="display: none;">
+                        <button type="button" onclick="document.getElementById('file-upload').click();">Select file</button>
+                    </div>
+                    
+                    <div class="file-specs">
+                        <div>
+                            <h4>File size and type</h4>
+                            <ul>
+                                <li>Image - max 15mb. '.jpg', '.gif' or '.png' recommended</li>
+                                <li>Video - max 30mb. '.mp4' recommended</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Resolution and aspect ratio</h4>
+                            <ul>
+                                <li>Image - min. 1000x1000px, 1:1 square recommended</li>
+                                <li>Video - 16:9 or 9:16, 1080p+ recommended</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <label>Add banner (Optional)</label>
+                        <input type="file" name="banner-upload" accept="image/jpeg, image/gif, image/png">
+                    </div>
+                    
+                    <p class="note">This info helps us understand your vision. We'll discuss refinements!</p>
+                    
+                    <button type="submit">Submit Idea</button>
+                </form>
+                
+                <p class="note">We'll review and get back to you soon! 📧</p>
+            </div>
+            
+            <div class="preview-section">
+                <h3>Preview</h3>
+                <p>How your coin might look</p>
+                <div style="background-color: #ffffff; height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <p>Preview ✨</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Creator Coin Launch is a marketing agency helping streamers, content creators, and companies launch their own tokens. We handle token creation, marketing, and project management with expertise and a fun touch.</p>
+        <p>Focus on your content – we'll handle the blockchain! 🌟</p>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <p>End-to-end support for your token project.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="emoji">🔑</span>
+                <h3>Token Launch</h3>
+                <p>Secure deployment on blockchain with compliance.</p>
+            </div>
+            <div class="service-card">
+                <span class="emoji">📈</span>
+                <h3>Marketing</h3>
+                <p>Campaigns and partnerships to grow adoption.</p>
+            </div>
+            <div class="service-card">
+                <span class="emoji">🛡️</span>
+                <h3>Project Support</h3>
+                <p>Ongoing optimization and security.</p>
+            </div>
+            <div class="service-card">
+                <span class="emoji">🎨</span>
+                <h3>Branding</h3>
+                <p>Custom designs for your style.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Creator Coin Launch. All rights reserved. | Contact Us</p>
+    </footer>
+</body>
+</html>
+```
